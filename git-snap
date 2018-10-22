@@ -26,7 +26,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-git commit --no-verify -am Snapshot$'\n\n'"This is a snapshot of '$PWD'."
+git commit --no-verify -am Snapshot$'\n\n'"This is a snapshot of my current working tree."
 
 # [1]: https://stackoverflow.com/q/6070179
 #      "Switching branches without touching the working tree?"
