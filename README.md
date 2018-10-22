@@ -1,11 +1,14 @@
 Sometimes I want to have some work that isn't yet ready for a proper commit available on
 another machine.  Other times I want to push unfinished work to a remote, so data loss is
-less likely.  In either case, I usually switch branches [without touching the working
-tree][1], create a throwaway commit, and switch back to the original branch.
+less likely.  In either case, I usually
 
-This works, but it's a bit manual and cumbersome.  It becomes more difficult when already
-having added a subset of the local changes to the index in preparation of the next commit:
-how can the index be saved and restored?  I wrote `git-snap` to automate this workflow.
+1.  switch branches [without touching the working tree][1],
+2.  create a throwaway commit, and
+3.  switch back to the original branch.
+
+This works, but it's a bit cumbersome.  It becomes more difficult when already having
+added a subset of the local changes to the index in preparation of the next commit: how
+can the index be saved and restored?  I wrote `git-snap` to automate this workflow.
 
 ## Usage
 
