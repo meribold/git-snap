@@ -11,12 +11,17 @@ sco() {
    git symbolic-ref HEAD "$1"
 }
 
+stash=$(git stash create)
+
 # TODO: we probably want a trap now to make sure we restore the previously active branch.
 sco "refs/heads/$snapshot_branch" || exit
 
 git commit --no-verify -am Snapshot
 
 sco "$HEAD"
+# Restore the index.  The tree of the second parent of a stash is the index at the time
+# the stash was created.
+git reset "$stash^2" -- '*'
 
 # [1]: https://stackoverflow.com/q/6070179
 #      "Switching branches without touching the working tree?"
