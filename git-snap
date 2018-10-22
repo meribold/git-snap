@@ -22,9 +22,11 @@ sco "refs/heads/$snapshot_branch" || exit
 # Use a trap to make sure we restore HEAD and the index no matter what.
 cleanup() {
    sco "$HEAD"
-   # Restore the index.  "[W]ith the --cached option the patch is only applied to the
-   # index." (git-apply(1))
-   git reset && git apply --cached "$index"
+   if [[ -s $index ]]; then
+      # Restore the index.  "[W]ith the --cached option the patch is only applied to the
+      # index." (git-apply(1))
+      git reset && git apply --cached "$index"
+   fi
    rm "$index"
 }
 trap cleanup EXIT
