@@ -3,9 +3,9 @@ another computer.  Other times I want to push unfinished work to a remote, so da
 less likely.  In either case, I usually [switch branches without touching the working
 tree][1], create a throwaway commit, and switch back to the original branch.
 
-This works, but it's a bit manual and cumbersome.  It becomes more difficult when having
-added a subset of the local changes to the index in preparation of the next commit
-already: how can these be saved and restored?
+This works, but it's a bit manual and cumbersome.  It becomes more difficult when already
+having added a subset of the local changes to the index in preparation of the next commit:
+how can these be saved and restored?
 
 That's why I wrote `git-snap`.
 
