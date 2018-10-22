@@ -9,7 +9,6 @@ fi
 if ! index=$(mktemp); then
    exit
 fi
-
 git diff --staged > "$index"
 
 # See [1].
