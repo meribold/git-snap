@@ -10,7 +10,7 @@ if ! index=$(mktemp); then
    exit
 fi
 
-git diff --staged > "$index"
+git diff --staged > "$index" || exit
 
 # See [1].
 sco() {
