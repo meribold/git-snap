@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+snapshot_branch=snapshots-$USER-$HOSTNAME
+
+if ! HEAD=$(git symbolic-ref HEAD); then
+   exit
+fi
+
+# See [1].
+sco() {
+   git symbolic-ref HEAD "$1"
+}
+
+# TODO: we probably want a trap now to make sure we restore the previously active branch.
+sco "refs/heads/$snapshot_branch" || exit
+
+git commit --no-verify -am Snapshot
+
+sco "$HEAD"
+
+# [1]: https://stackoverflow.com/q/6070179
+#      "Switching branches without touching the working tree?"
+# [2]: https://github.com/qw3rtman/git-fire/blob/master/git-fire
