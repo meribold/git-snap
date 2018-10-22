@@ -15,13 +15,11 @@ After saving `git-snap` to some directory in your `$PATH`:
 
     $ git snap
 
-This will create a commit on a branch called `snapshots-<username>-<hostname>` <!--(as
-well as the branch, if necessary)--> with all local changes to tracked files.  It will
-make no changes to the working directory and will restore everything else (`HEAD` and the
-index) after making the commit.
-
-Take a look at the [`snapshots-casi-elanor`][3] branch of this repository to see some
-commits that `git-snap` created.
+This will create a commit with all changes to tracked files on a branch called
+`snapshots-<username>-<hostname>`.  It doesn't touch the working directory and will
+restore everything else (`HEAD` and the index) after making the commit.  Take a look at
+the [`snapshots-casi-elanor`][3] branch of this repository to see some commits that
+`git-snap` created.
 
 [1]: https://stackoverflow.com/q/6070179
      "Switching branches without touching the working tree?"
