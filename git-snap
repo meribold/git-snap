@@ -6,12 +6,12 @@ if ! HEAD=$(git symbolic-ref HEAD); then
    exit
 fi
 
+stash=$(git stash create)
+
 # See [1].
 sco() {
    git symbolic-ref HEAD "$1"
 }
-
-stash=$(git stash create)
 
 sco "refs/heads/$snapshot_branch" || exit
 
@@ -30,4 +30,4 @@ git commit --no-verify -am Snapshot
 
 # [1]: https://stackoverflow.com/q/6070179
 #      "Switching branches without touching the working tree?"
-# [2]: https://github.com/qw3rtman/git-fire/blob/master/git-fire
+# [2]: https://github.com/qw3rtman/git-fire
