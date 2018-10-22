@@ -6,9 +6,7 @@ less likely.  In either case, I usually
 2.  create a throwaway commit, and
 3.  switch back to the original branch.
 
-This works, but it's a bit cumbersome.  It becomes more difficult when already having
-added a subset of the local changes to the index in preparation of the next commit: how
-can the index be saved and restored?  I wrote `git-snap` to automate this workflow.
+This works, but it's a bit cumbersome, so I wrote `git-snap` to automate this workflow.
 
 ## Usage
 
@@ -16,8 +14,8 @@ can the index be saved and restored?  I wrote `git-snap` to automate this workfl
 
 This will create a commit with all changes to tracked files on a branch called
 `snapshots-<username>-<hostname>`.  It doesn't touch the working directory and will
-restore everything else (`HEAD` and the index) after making the commit.  Take a look at
-the [`snapshots-casi-elanor`][3] branch of this repository to see some commits created
+restore everything else (`HEAD` **and the index**) after making the commit.  Take a look
+at the [`snapshots-casi-elanor`][3] branch of this repository to see some commits created
 with `git-snap`.
 
 ## Installation
