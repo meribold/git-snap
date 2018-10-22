@@ -27,7 +27,6 @@ cleanup() {
    git reset && git apply --cached "$index"
    rm "$index"
 }
-
 trap cleanup EXIT
 
 # This will also commit new files that are already staged.  I think that's good.
