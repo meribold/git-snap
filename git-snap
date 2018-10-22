@@ -12,9 +12,6 @@ fi
 
 git diff --staged > "$index"
 
-# less "$index"
-# exit
-
 # See [1].
 sco() {
    git symbolic-ref HEAD "$1"
