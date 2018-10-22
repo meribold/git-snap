@@ -21,7 +21,6 @@ with `git-snap`.
 
 Save `git-snap` to some directory in your `$PATH`.
 
-
 Create snapshot commits to easily share or back up unfinished work
 
 [1]: https://stackoverflow.com/q/6070179
