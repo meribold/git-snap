@@ -3,10 +3,10 @@ another machine.  Other times I want to push unfinished work to a remote, so dat
 less likely.  In either case, I usually
 
 1.  switch branches [without touching the working tree][1],
-2.  create a throwaway commit, and
+2.  create a throwaway commit,
 3.  switch back to the original branch.
 
-This works, but it's a bit cumbersome, so I wrote `git-snap` to automate this workflow.
+This works, but it's a bit cumbersome, so I wrote `git-snap` to automate it.
 
 ## Usage
 
