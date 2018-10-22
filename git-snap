@@ -20,7 +20,9 @@ cleanup() {
    sco "$HEAD"
    # Restore the index.  The tree of the second parent of a stash is the index at the time
    # the stash was created.
-   git reset "$stash^2" -- '*'
+   if [[ $stash ]]; then
+      git reset "$stash^2" -- '*'
+   fi
 }
 trap cleanup EXIT
 
