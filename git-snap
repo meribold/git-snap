@@ -6,7 +6,11 @@ if ! HEAD=$(git symbolic-ref HEAD); then
    exit
 fi
 
-stash=$(git stash create)
+if ! index=$(mktemp); then
+   exit
+fi
+
+git diff --staged > "$index"
 
 # See [1].
 sco() {
@@ -18,14 +22,14 @@ sco "refs/heads/$snapshot_branch" || exit
 # Use a trap to make sure we restore HEAD and the index no matter what.
 cleanup() {
    sco "$HEAD"
-   # Restore the index.  The tree of the second parent of a stash is the index at the time
-   # the stash was created.
-   if [[ $stash ]]; then
-      git reset "$stash^2" -- '*'
-   fi
+   # Restore the index.  "[W]ith the --cached option the patch is only applied to the
+   # index." (git-apply(1))
+   git apply --cached "$index"
+   rm "$index"
 }
 trap cleanup EXIT
 
+# This will also commit new files that are already staged.  I think that's good.
 git commit --no-verify -am Snapshot$'\n\n'"This is a snapshot of my current working tree."
 
 # [1]: https://stackoverflow.com/q/6070179
