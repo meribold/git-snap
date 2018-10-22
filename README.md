@@ -5,7 +5,7 @@ tree][1], create a throwaway commit, and switch back to the original branch.
 
 This works, but it's a bit manual and cumbersome.  It becomes more difficult when already
 having added a subset of the local changes to the index in preparation of the next commit:
-how can these be saved and restored?
+how is the index saved and restored?
 
 That's why I wrote `git-snap`.
 
