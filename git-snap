@@ -9,7 +9,11 @@ fi
 if ! index=$(mktemp); then
    exit
 fi
+
 git diff --staged > "$index"
+
+# less "$index"
+# exit
 
 # See [1].
 sco() {
@@ -23,7 +27,7 @@ cleanup() {
    sco "$HEAD"
    # Restore the index.  "[W]ith the --cached option the patch is only applied to the
    # index." (git-apply(1))
-   git apply --cached "$index"
+   git reset && git apply --cached "$index"
    rm "$index"
 }
 trap cleanup EXIT
