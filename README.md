@@ -1,4 +1,4 @@
-## Motivation
+# git-snap
 
 Sometimes I want to have some work that isn't yet ready for a proper commit available on
 another machine.  Other times I want to push unfinished work to a remote, so data loss is
