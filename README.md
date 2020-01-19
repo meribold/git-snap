@@ -17,7 +17,7 @@ This works, but it's a bit cumbersome, so I wrote `git-snap` to automate it.
 This will create a commit with all changes to tracked files on a branch called
 `snapshots-<username>-<hostname>`.<sup>[1](#user-content-footnote-1)</sup>  It doesn't
 touch the working directory and will restore everything else (`HEAD` and the index) after
-making the commit.  Take a look at the [`snapshots-casi-elanor`][3] branch of this
+making the commit.  Take a look at the [`snapshots-meribold-smial`][3] branch of this
 repository to see some commits created with `git-snap`.
 
 ## Installation
@@ -36,4 +36,4 @@ Untracked but (partially) staged files are also committed.
      "Switching branches without touching the working tree?"
 [2]: https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified#_the_index
      "Git Tools - Reset Demystified - Pro Git"
-[3]: https://github.com/meribold/git-snap/commits/snapshots-casi-elanor
+[3]: https://github.com/meribold/git-snap/commits/snapshots-meribold-smial
