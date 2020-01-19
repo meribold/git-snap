@@ -34,7 +34,11 @@ cleanup() {
 trap cleanup EXIT
 
 # This will also commit new files that are already staged.  I think that's good.
-git commit --no-verify -am Snapshot$'\n\n'"This is a snapshot of my current working tree."
+git commit --no-verify -am 'Snapshot
+
+This is a snapshot commit created by git-snap.
+
+https://github.com/meribold/git-snap'
 
 # [1]: https://stackoverflow.com/q/6070179
 #      "Switching branches without touching the working tree?"
