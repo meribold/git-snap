@@ -37,22 +37,22 @@ files are included depends on whether the file exists in the working tree, the i
 
 | working tree | index  | `HEAD` | tip of snapshots branch | included in snapshot commit | comment                     |
 |--------------|--------|--------|-------------------------|-----------------------------|-----------------------------|
-|              |        |        |                         | no                          |                             |
-|              |        |        | exists                  | no                          |                             |
-|              |        | exists |                         | no                          |                             |
-|              |        | exists | exists                  | no                          |                             |
-|              | exists |        |                         | no                          |                             |
-|              | exists |        | exists                  | no                          |                             |
-|              | exists | exists |                         | no                          |                             |
-|              | exists | exists | exists                  | no                          |                             |
-| exists       |        |        |                         | **no**                      |                             |
-| exists       |        |        | exists                  | **no**                      | removed on snapshots branch |
-| exists       |        | exists |                         | no                          |                             |
-| exists       |        | exists | exists                  | no                          | removed on snapshots branch |
-| exists       | exists |        |                         | yes                         | new file that is staged     |
-| exists       | exists |        | exists                  | yes (already there)         |                             |
-| exists       | exists | exists |                         | yes (added)                 |                             |
-| exists       | exists | exists | exists                  | yes (already there)         |                             |
+|              |        |        |                         | ❌                          |                             |
+|              |        |        | exists                  | ❌                          |                             |
+|              |        | exists |                         | ❌                          |                             |
+|              |        | exists | exists                  | ❌                          |                             |
+|              | exists |        |                         | ❌                          |                             |
+|              | exists |        | exists                  | ❌                          |                             |
+|              | exists | exists |                         | ❌                          |                             |
+|              | exists | exists | exists                  | ❌                          |                             |
+| exists       |        |        |                         | ❌                          |                             |
+| exists       |        |        | exists                  | ❌                          | removed on snapshots branch |
+| exists       |        | exists |                         | ❌                          |                             |
+| exists       |        | exists | exists                  | ❌                          | removed on snapshots branch |
+| exists       | exists |        |                         | ✅                          | new file that is staged     |
+| exists       | exists |        | exists                  | ✅ (already there)          |                             |
+| exists       | exists | exists |                         | ✅ (added)                  |                             |
+| exists       | exists | exists | exists                  | ✅ (already there)          |                             |
 
 Most of these shouldn't be surprising.  The ones that might be are emphasized.  To
 summarize:
