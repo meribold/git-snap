@@ -1,5 +1,12 @@
 # git-snap
 
+`git snap` creates a commit on a user- and machine-specific snapshots branch that includes
+most local changes.  It doesn't ask for a commit message.  It also doesn't touch the
+working tree (working directory), saves and restores the index, and switches back to the
+branch that was checked out before running `git snap`.  In other words, everything looks
+exactly the same after running `git snap`, but your changes are safely stored by Git and
+can be pushed to a remote for redundancy or sharing.  This is in contrast to stashes.
+
 Sometimes I want to have some work that isn't yet ready for a proper commit available on
 another machine.  Other times I want to push unfinished work to a remote, so data loss is
 less likely.  In either case, I usually
@@ -8,21 +15,59 @@ less likely.  In either case, I usually
 2.  create a throwaway commit,
 3.  switch back to the original branch.
 
-This works, but it's a bit cumbersome, so I wrote `git-snap` to automate it.
+This works, but it's a bit cumbersome, so I wrote git-snap to automate it.
 
 ## Usage
 
-    $ git snap
+    git snap
 
-This will create a commit with all changes to tracked files on a branch called
-`snapshots-<username>-<hostname>`.<sup>[1](#user-content-footnote-1)</sup>  It doesn't
-touch the working directory and will restore everything else (`HEAD` and the index) after
-making the commit.  Take a look at the [`snapshots-meribold-smial`][3] branch of this
-repository to see some commits created with `git-snap`.
+This will create a commit with most local changes on a branch named
+`snapshots-<username>-<hostname>`.<sup>[1](#user-content-footnote-1)</sup>  Take a look at
+the [`snapshots-meribold-smial`][3] branch of this repository to see some commits created
+using git-snap.
+
+git-snap is save.  It doesn't touch the working tree (working directory) and saves and
+restores the index.
+
+## What exactly is included in a snapshot commit
+
+The version of a file that gets committed is always the one in your working tree.  Which
+files are included depends on whether the file exists in the working tree, the index,
+`HEAD`, and the tip of the snapshots branch.
+
+|    | working tree | index | `HEAD` | tip of snapshots branch | **snapshot commit** | comment                     |
+|----|--------------|-------|--------|-------------------------|---------------------|-----------------------------|
+| 0  | no           | no    | no     | no                      | no                  |                             |
+| 1  | no           | no    | no     | yes                     | no                  |                             |
+| 2  | no           | no    | yes    | no                      | no                  |                             |
+| 3  | no           | no    | yes    | yes                     | no                  |                             |
+| 4  | no           | yes   | no     | no                      | no                  |                             |
+| 5  | no           | yes   | no     | yes                     | no                  |                             |
+| 6  | no           | yes   | yes    | no                      | no                  |                             |
+| 7  | no           | yes   | yes    | yes                     | no                  |                             |
+| 8  | yes          | no    | no     | no                      | **no**              |                             |
+| 9  | yes          | no    | no     | yes                     | **no**              | removed on snapshots branch |
+| 10 | yes          | no    | yes    | no                      | no                  |                             |
+| 11 | yes          | no    | yes    | yes                     | no                  | removed on snapshots branch |
+| 12 | yes          | yes   | no     | no                      | yes                 | new file that is staged     |
+| 13 | yes          | yes   | no     | yes                     | yes (already there) |                             |
+| 14 | yes          | yes   | yes    | no                      | yes (added)         |                             |
+| 15 | yes          | yes   | yes    | yes                     | yes (already there) |                             |
+
+Most of these shouldn't be surprising.  The ones that might be are emphasized.  To
+summarize:
+
+*   If the file doesn't exist in the working tree then it doesn't go into the snapshot
+    commit.
+*   If the file exists but isn't staged then it doesn't go into the snapshot commit .
+*   If the file exists in both the working tree and the index then it goes into the
+    snapshot commit.
+
+That covers new files.  But what about modified files?
 
 ## Installation
 
-Save `git-snap` to some directory in your `$PATH`.
+Save git-snap to some directory in your `$PATH`.
 
 ## Footnotes
 
