@@ -35,24 +35,24 @@ The version of a file that gets committed is always the one in your working tree
 files are included depends on whether the file exists in the working tree, the index,
 `HEAD`, and the tip of the snapshots branch.
 
-| working tree | index  | `HEAD` | tip of snapshots branch | included in snapshot commit | comment                     |
-|--------------|--------|--------|-------------------------|-----------------------------|-----------------------------|
-|              |        |        |                         | ❌                          |                             |
-|              |        |        | exists                  | ❌                          |                             |
-|              |        | exists |                         | ❌                          |                             |
-|              |        | exists | exists                  | ❌                          |                             |
-|              | exists |        |                         | ❌                          |                             |
-|              | exists |        | exists                  | ❌                          |                             |
-|              | exists | exists |                         | ❌                          |                             |
-|              | exists | exists | exists                  | ❌                          |                             |
-| exists       |        |        |                         | ❌                          |                             |
-| exists       |        |        | exists                  | ❌                          | removed on snapshots branch |
-| exists       |        | exists |                         | ❌                          |                             |
-| exists       |        | exists | exists                  | ❌                          | removed on snapshots branch |
-| exists       | exists |        |                         | ✅                          | new file that is staged     |
-| exists       | exists |        | exists                  | ✅ (already there)          |                             |
-| exists       | exists | exists |                         | ✅ (added)                  |                             |
-| exists       | exists | exists | exists                  | ✅ (already there)          |                             |
+| working tree | index  | `HEAD` | tip of snapshots branch | included in snapshot commit      |
+|--------------|--------|--------|-------------------------|----------------------------------|
+|              |        |        |                         | ❌                               |
+|              |        |        | exists                  | ❌                               |
+|              |        | exists |                         | ❌                               |
+|              |        | exists | exists                  | ❌                               |
+|              | exists |        |                         | ❌                               |
+|              | exists |        | exists                  | ❌                               |
+|              | exists | exists |                         | ❌                               |
+|              | exists | exists | exists                  | ❌                               |
+| exists       |        |        |                         | ❌                               |
+| exists       |        |        | exists                  | ❌ (removed on snapshots branch) |
+| exists       |        | exists |                         | ❌                               |
+| exists       |        | exists | exists                  | ❌ (removed on snapshots branch) |
+| exists       | exists |        |                         | ✅ (new file that is staged)     |
+| exists       | exists |        | exists                  | ✅ (already there)               |
+| exists       | exists | exists |                         | ✅ (added)                       |
+| exists       | exists | exists | exists                  | ✅ (already there)               |
 
 Most of these shouldn't be surprising.  The ones that might be are emphasized.  To
 summarize:
