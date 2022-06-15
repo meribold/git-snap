@@ -35,24 +35,24 @@ The version of a file that gets committed is always the one in your working tree
 files are included depends on whether the file exists in the working tree, the index,
 `HEAD`, and the tip of the snapshots branch.
 
-| working tree | index | `HEAD` | tip of snapshots branch | **snapshot commit** | comment                     |
-|--------------|-------|--------|-------------------------|---------------------|-----------------------------|
-| no           | no    | no     | no                      | no                  |                             |
-| no           | no    | no     | yes                     | no                  |                             |
-| no           | no    | yes    | no                      | no                  |                             |
-| no           | no    | yes    | yes                     | no                  |                             |
-| no           | yes   | no     | no                      | no                  |                             |
-| no           | yes   | no     | yes                     | no                  |                             |
-| no           | yes   | yes    | no                      | no                  |                             |
-| no           | yes   | yes    | yes                     | no                  |                             |
-| yes          | no    | no     | no                      | **no**              |                             |
-| yes          | no    | no     | yes                     | **no**              | removed on snapshots branch |
-| yes          | no    | yes    | no                      | no                  |                             |
-| yes          | no    | yes    | yes                     | no                  | removed on snapshots branch |
-| yes          | yes   | no     | no                      | yes                 | new file that is staged     |
-| yes          | yes   | no     | yes                     | yes (already there) |                             |
-| yes          | yes   | yes    | no                      | yes (added)         |                             |
-| yes          | yes   | yes    | yes                     | yes (already there) |                             |
+| working tree | index  | `HEAD` | tip of snapshots branch | included in snapshot commit | comment                     |
+|--------------|--------|--------|-------------------------|-----------------------------|-----------------------------|
+|              |        |        |                         | no                          |                             |
+|              |        |        | exists                  | no                          |                             |
+|              |        | exists |                         | no                          |                             |
+|              |        | exists | exists                  | no                          |                             |
+|              | exists |        |                         | no                          |                             |
+|              | exists |        | exists                  | no                          |                             |
+|              | exists | exists |                         | no                          |                             |
+|              | exists | exists | exists                  | no                          |                             |
+| exists       |        |        |                         | **no**                      |                             |
+| exists       |        |        | exists                  | **no**                      | removed on snapshots branch |
+| exists       |        | exists |                         | no                          |                             |
+| exists       |        | exists | exists                  | no                          | removed on snapshots branch |
+| exists       | exists |        |                         | yes                         | new file that is staged     |
+| exists       | exists |        | exists                  | yes (already there)         |                             |
+| exists       | exists | exists |                         | yes (added)                 |                             |
+| exists       | exists | exists | exists                  | yes (already there)         |                             |
 
 Most of these shouldn't be surprising.  The ones that might be are emphasized.  To
 summarize:
