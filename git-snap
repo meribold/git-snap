@@ -33,6 +33,8 @@ cleanup() {
 }
 trap cleanup EXIT
 
+git ls-tree -r --full-tree --name-only @ | xargs git reset --
+
 # This will also commit new files that are already staged.  I think that's good.
 git commit --no-verify -am 'Snapshot
 
