@@ -11,7 +11,7 @@ contrast to stashes.
     git snap
 
 This creates a commit with most local changes on a branch named
-`snapshots-<username>-<hostname>`.  Take a look at the [`snapshots-meribold-smial`][3]
+`snapshots-<username>-<hostname>`.  Take a look at the [`snapshots-meribold-smial`][1]
 branch of this repository to see some commits created using `git snap`.
 
 ## What gets included in a snapshot commit?
@@ -51,8 +51,4 @@ version that is included is always the one from the working tree.
 
 Save `git-snap` to some directory in your `$PATH`.
 
-[1]: https://stackoverflow.com/q/6070179
-     "Switching branches without touching the working tree?"
-[2]: https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified#_the_index
-     "Git Tools - Reset Demystified - Pro Git"
-[3]: https://github.com/meribold/git-snap/commits/snapshots-meribold-smial
+[1]: https://github.com/meribold/git-snap/commits/snapshots-meribold-smial
