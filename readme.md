@@ -26,6 +26,10 @@ files are included depends on whether the file exists in the working tree and th
 *   If the file exists in both the working tree and the index then it **does** go into the
     snapshot commit.
 
+Each row in the following table specifies whether a file exists in any of four trees: the
+working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last column
+indicates whether `git snap` would include this file in the commit it creates.
+
 | working tree | index  | `HEAD` | tip of snapshots branch | description                      | included in snapshot commit                        |
 |--------------|--------|--------|-------------------------|----------------------------------|----------------------------------------------------|
 |              |        |        | exists                  | after `git rm` and committing    | :x: removed from snapshots branch                  |
