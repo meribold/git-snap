@@ -31,8 +31,8 @@ files are included depends on whether the file exists in the working tree, the i
 | description                   | working tree | index  | `HEAD` | tip of snapshots branch | included in snapshot commit                  |
 |-------------------------------|--------------|--------|--------|-------------------------|----------------------------------------------|
 | after `git rm` and committing |              |        |        | exists                  | :x: removed from snapshots branch            |
-| tracked file, after `git rm`  |              |        | exists |                         |                                              |
-| tracked file, after `git rm`  |              |        | exists | exists                  | :x: removed from snapshots branch            |
+| after `git rm`                |              |        | exists |                         |                                              |
+| after `git rm`                |              |        | exists | exists                  | :x: removed from snapshots branch            |
 |                               |              | exists |        |                         |                                              |
 |                               |              | exists |        | exists                  | :x: removed from snapshots branch            |
 | tracked file, after `rm`      |              | exists | exists |                         |                                              |
