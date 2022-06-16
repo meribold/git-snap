@@ -45,12 +45,11 @@ files are included depends on whether the file exists in the working tree, the i
 | exists       | exists | exists |                         | :heavy_check_mark: (added to snapshots branch)                   |
 | exists       | exists | exists | exists                  | :heavy_check_mark: (already there)                               |
 
-Most of these shouldn't be surprising.  The ones that might be are emphasized.  To
-summarize:
+Most of these shouldn't be surprising.  To summarize:
 
 *   If the file doesn't exist in the working tree then it doesn't go into the snapshot
     commit.
-*   If the file exists but isn't staged then it doesn't go into the snapshot commit .
+*   If the file exists but isn't staged then it doesn't go into the snapshot commit.
 *   If the file exists in both the working tree and the index then it goes into the
     snapshot commit.
 
