@@ -38,13 +38,13 @@ files are included depends on whether the file exists in the working tree, the i
 | working tree | index  | `HEAD` | tip of snapshots branch | included in snapshot commit                                      |
 |--------------|--------|--------|-------------------------|------------------------------------------------------------------|
 |              |        |        |                         | :x:                                                              |
-|              |        |        | exists                  | :x:                                                              |
+|              |        |        | exists                  | :x: (removed from snapshots branch)                              |
 |              |        | exists |                         | :x:                                                              |
-|              |        | exists | exists                  | :x:                                                              |
+|              |        | exists | exists                  | :x: (removed from snapshots branch)                              |
 |              | exists |        |                         | :x:                                                              |
-|              | exists |        | exists                  | :x:                                                              |
+|              | exists |        | exists                  | :x: (removed from snapshots branch)                              |
 |              | exists | exists |                         | :x:                                                              |
-|              | exists | exists | exists                  | :x:                                                              |
+|              | exists | exists | exists                  | :x: (removed from snapshots branch)                              |
 | exists       |        |        |                         | :x:                                                              |
 | exists       |        |        | exists                  | :x: (removed from snapshots branch)                              |
 | exists       |        | exists |                         | :x:                                                              |
