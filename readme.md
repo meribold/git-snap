@@ -45,8 +45,6 @@ files are included depends on whether the file exists in the working tree and th
 | exists       | exists | exists |                         | tracked file                     | :heavy_check_mark: added to snapshots branch       |
 | exists       | exists | exists | exists                  | tracked file                     | :heavy_check_mark: updated to working tree version |
 
-That covers new files.  But what about modified files?
-
 ## Installation
 
 Save `git-snap` to some directory in your `$PATH`.
