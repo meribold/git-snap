@@ -19,12 +19,12 @@ branch of this repository to see some commits created using `git snap`.
 The version of a file that gets committed is always the one in your working tree.  Which
 files are included depends on whether the file exists in the working tree and the index.
 
+*   If the file exists in both the working tree and the index then it goes into the
+    snapshot commit.
 *   If the file doesn't exist in the working tree then it doesn't go into the snapshot
     commit.
 *   If the file exists but isn't staged then it also **doesn't** go into the snapshot
     commit.
-*   If the file exists in both the working tree and the index then it **does** go into the
-    snapshot commit.
 
 Each row in the following table specifies whether a file exists in any of four trees: the
 working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last column
