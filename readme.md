@@ -31,16 +31,16 @@ files are included depends on whether the file exists in the working tree, the i
 |------------------------------|--------------|--------|--------|-------------------------|----------------------------------------------|
 |                              |              |        |        |                         |                                              |
 |                              |              |        |        | exists                  | :x: removed from snapshots branch            |
-| after `git rm tracked_file`  |              |        | exists |                         |                                              |
-| after `git rm tracked_file`  |              |        | exists | exists                  | :x: removed from snapshots branch            |
+| tracked file, after `git rm` |              |        | exists |                         |                                              |
+| tracked file, after `git rm` |              |        | exists | exists                  | :x: removed from snapshots branch            |
 |                              |              | exists |        |                         |                                              |
 |                              |              | exists |        | exists                  | :x: removed from snapshots branch            |
-| after `rm tracked_file`      |              | exists | exists |                         |                                              |
-| after `rm tracked_file`      |              | exists | exists | exists                  | :x: removed from snapshots branch            |
+| tracked file, after `rm`     |              | exists | exists |                         |                                              |
+| tracked file, after `rm`     |              | exists | exists | exists                  | :x: removed from snapshots branch            |
 | new file, not staged         | exists       |        |        |                         |                                              |
 | new file, not staged         | exists       |        |        | exists                  | :x: removed from snapshots branch            |
-| after `git rm --cached file` | exists       |        | exists |                         |                                              |
-| after `git rm --cached file` | exists       |        | exists | exists                  | :x: removed from snapshots branch            |
+| after `git rm --cached`      | exists       |        | exists |                         |                                              |
+| after `git rm --cached`      | exists       |        | exists | exists                  | :x: removed from snapshots branch            |
 | new file, staged             | exists       | exists |        |                         | :heavy_check_mark: added to snapshots branch |
 | new file, staged             | exists       | exists |        | exists                  | already there                                |
 |                              | exists       | exists | exists |                         | :heavy_check_mark: added to snapshots branch |
