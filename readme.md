@@ -35,8 +35,8 @@ files are included depends on whether the file exists in the working tree, the i
 | after `git rm file`          |              |        | exists | exists                  | :x: removed from snapshots branch            |
 |                              |              | exists |        |                         |                                              |
 |                              |              | exists |        | exists                  | :x: removed from snapshots branch            |
-|                              |              | exists | exists |                         |                                              |
-|                              |              | exists | exists | exists                  | :x: removed from snapshots branch            |
+| after `rm tracked_file`      |              | exists | exists |                         |                                              |
+| after `rm tracked_file`      |              | exists | exists | exists                  | :x: removed from snapshots branch            |
 | new file, not staged         | exists       |        |        |                         |                                              |
 | new file, not staged         | exists       |        |        | exists                  | :x: removed from snapshots branch            |
 | after `git rm --cached file` | exists       |        | exists |                         |                                              |
