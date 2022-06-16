@@ -43,8 +43,8 @@ files are included depends on whether the file exists in the working tree, the i
 | exists       |        | exists | exists                  | after `git rm --cached`          | :x: removed from snapshots branch            |
 | exists       | exists |        |                         | new file, staged                 | :heavy_check_mark: added to snapshots branch |
 | exists       | exists |        | exists                  | new file, staged                 | already there                                |
-| exists       | exists | exists |                         |                                  | :heavy_check_mark: added to snapshots branch |
-| exists       | exists | exists | exists                  |                                  | already there                                |
+| exists       | exists | exists |                         | tracked file                     | :heavy_check_mark: added to snapshots branch |
+| exists       | exists | exists | exists                  | tracked file                     | already there                                |
 
 That covers new files.  But what about modified files?
 
