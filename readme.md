@@ -21,6 +21,12 @@ The version of a file that gets committed is always the one in your working tree
 files are included depends on whether the file exists in the working tree, the index,
 `HEAD`, and the tip of the snapshots branch.
 
+*   If the file doesn't exist in the working tree then it doesn't go into the snapshot
+    commit.
+*   If the file exists but isn't staged then it **doesn't** go into the snapshot commit.
+*   If the file exists in both the working tree and the index then it **does** go into the
+    snapshot commit.
+
 | working tree | index  | `HEAD` | tip of snapshots branch | included in snapshot commit                                      |
 |--------------|--------|--------|-------------------------|------------------------------------------------------------------|
 |              |        |        |                         | :x:                                                              |
@@ -39,14 +45,6 @@ files are included depends on whether the file exists in the working tree, the i
 | exists       | exists |        | exists                  | :heavy_check_mark: (already there)                               |
 | exists       | exists | exists |                         | :heavy_check_mark: (added to snapshots branch)                   |
 | exists       | exists | exists | exists                  | :heavy_check_mark: (already there)                               |
-
-Most of these shouldn't be surprising.  To summarize:
-
-*   If the file doesn't exist in the working tree then it doesn't go into the snapshot
-    commit.
-*   If the file exists but isn't staged then it doesn't go into the snapshot commit.
-*   If the file exists in both the working tree and the index then it goes into the
-    snapshot commit.
 
 That covers new files.  But what about modified files?
 
