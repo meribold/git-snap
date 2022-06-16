@@ -11,9 +11,8 @@ contrast to stashes.
     git snap
 
 This creates a commit with most local changes on a branch named
-`snapshots-<username>-<hostname>`.<sup>[1](#user-content-footnote-1)</sup>  Take a look at
-the [`snapshots-meribold-smial`][3] branch of this repository to see some commits created
-using `git snap`.
+`snapshots-<username>-<hostname>`.  Take a look at the [`snapshots-meribold-smial`][3]
+branch of this repository to see some commits created using `git snap`.
 
 ## What exactly is included in a snapshot commit?
 
@@ -48,14 +47,6 @@ files are included depends on whether the file exists in the working tree and th
 ## Installation
 
 Save `git-snap` to some directory in your `$PATH`.
-
-## Footnotes
-
-<ol>
-<li id="footnote-1">
-Untracked but (partially) staged files are also committed.
-</li>
-</ol>
 
 [1]: https://stackoverflow.com/q/6070179
      "Switching branches without touching the working tree?"
