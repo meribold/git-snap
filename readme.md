@@ -15,9 +15,6 @@ This will create a commit with most local changes on a branch named
 the [`snapshots-meribold-smial`][3] branch of this repository to see some commits created
 using `git snap`.
 
-`git snap` is save.  It doesn't touch the working tree (working directory) and saves and
-restores the index.
-
 ## What exactly is included in a snapshot commit
 
 The version of a file that gets committed is always the one in your working tree.  Which
