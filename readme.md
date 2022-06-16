@@ -14,7 +14,7 @@ This creates a commit with most local changes on a branch named
 `snapshots-<username>-<hostname>`.  Take a look at the [`snapshots-meribold-smial`][3]
 branch of this repository to see some commits created using `git snap`.
 
-## What exactly is included in a snapshot commit?
+## What is included in a snapshot commit?
 
 The version of a file that gets committed is always the one in your working tree.  Which
 files are included depends on whether the file exists in the working tree and the index.
