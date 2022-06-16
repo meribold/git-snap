@@ -8,16 +8,6 @@ exactly the same as before after running `git snap`, but your changes are safely
 Git and can be pushed to a remote for redundancy or sharing.  This is in contrast to
 stashes.
 
-Sometimes I want to have some work that isn't yet ready for a proper commit available on
-another machine.  Other times I want to push unfinished work to a remote, so data loss is
-less likely.  In either case, I usually
-
-1.  switch branches [without touching the working tree][1],
-2.  create a throwaway commit,
-3.  switch back to the original branch.
-
-This works, but it's a bit cumbersome, so I wrote git-snap to automate it.
-
 ## Usage
 
     git snap
