@@ -18,8 +18,7 @@ using `git snap`.
 ## What exactly is included in a snapshot commit?
 
 The version of a file that gets committed is always the one in your working tree.  Which
-files are included depends on whether the file exists in the working tree, the index,
-`HEAD`, and the tip of the snapshots branch.
+files are included depends on whether the file exists in the working tree and the index.
 
 *   If the file doesn't exist in the working tree then it doesn't go into the snapshot
     commit.
