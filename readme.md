@@ -1,5 +1,3 @@
-# git-snap
-
 `git snap` creates a commit on a user- and machine-specific snapshots branch that includes
 most local changes.  It doesn't ask for a commit message.  It also doesn't touch the
 working tree (working directory), saves and restores the index, and switches back to the
