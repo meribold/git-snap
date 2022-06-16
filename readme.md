@@ -31,8 +31,8 @@ files are included depends on whether the file exists in the working tree, the i
 |------------------------------|--------------|--------|--------|-------------------------|------------------------------------------------|
 |                              |              |        |        |                         | :x:                                            |
 |                              |              |        |        | exists                  | :x: (removed from snapshots branch)            |
-|                              |              |        | exists |                         | :x:                                            |
-|                              |              |        | exists | exists                  | :x: (removed from snapshots branch)            |
+| after `git rm file`          |              |        | exists |                         | :x:                                            |
+| after `git rm file`          |              |        | exists | exists                  | :x: (removed from snapshots branch)            |
 |                              |              | exists |        |                         | :x:                                            |
 |                              |              | exists |        | exists                  | :x: (removed from snapshots branch)            |
 |                              |              | exists | exists |                         | :x:                                            |
