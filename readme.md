@@ -28,23 +28,23 @@ files are included depends on whether the file exists in the working tree, the i
 *   If the file exists in both the working tree and the index then it **does** go into the
     snapshot commit.
 
-| working tree | index  | `HEAD` | tip of snapshots branch | description                      | included in snapshot commit                  |
-|--------------|--------|--------|-------------------------|----------------------------------|----------------------------------------------|
-|              |        |        | exists                  | after `git rm` and committing    | :x: removed from snapshots branch            |
-|              |        | exists |                         | after `git rm`                   |                                              |
-|              |        | exists | exists                  | after `git rm`                   | :x: removed from snapshots branch            |
-|              | exists |        |                         | new file, added and then removed |                                              |
-|              | exists |        | exists                  | new file, added and then removed | :x: removed from snapshots branch            |
-|              | exists | exists |                         | tracked file, after `rm`         |                                              |
-|              | exists | exists | exists                  | tracked file, after `rm`         | :x: removed from snapshots branch            |
-| exists       |        |        |                         | new file, not staged             |                                              |
-| exists       |        |        | exists                  | new file, not staged             | :x: removed from snapshots branch            |
-| exists       |        | exists |                         | after `git rm --cached`          |                                              |
-| exists       |        | exists | exists                  | after `git rm --cached`          | :x: removed from snapshots branch            |
-| exists       | exists |        |                         | new file, staged                 | :heavy_check_mark: added to snapshots branch |
-| exists       | exists |        | exists                  | new file, staged                 | already there                                |
-| exists       | exists | exists |                         | tracked file                     | :heavy_check_mark: added to snapshots branch |
-| exists       | exists | exists | exists                  | tracked file                     | already there                                |
+| working tree | index  | `HEAD` | tip of snapshots branch | description                      | included in snapshot commit                        |
+|--------------|--------|--------|-------------------------|----------------------------------|----------------------------------------------------|
+|              |        |        | exists                  | after `git rm` and committing    | :x: removed from snapshots branch                  |
+|              |        | exists |                         | after `git rm`                   |                                                    |
+|              |        | exists | exists                  | after `git rm`                   | :x: removed from snapshots branch                  |
+|              | exists |        |                         | new file, added and then removed |                                                    |
+|              | exists |        | exists                  | new file, added and then removed | :x: removed from snapshots branch                  |
+|              | exists | exists |                         | tracked file, after `rm`         |                                                    |
+|              | exists | exists | exists                  | tracked file, after `rm`         | :x: removed from snapshots branch                  |
+| exists       |        |        |                         | new file, not staged             |                                                    |
+| exists       |        |        | exists                  | new file, not staged             | :x: removed from snapshots branch                  |
+| exists       |        | exists |                         | after `git rm --cached`          |                                                    |
+| exists       |        | exists | exists                  | after `git rm --cached`          | :x: removed from snapshots branch                  |
+| exists       | exists |        |                         | new file, staged                 | :heavy_check_mark: added to snapshots branch       |
+| exists       | exists |        | exists                  | new file, staged                 | :heavy_check_mark: updated to working tree version |
+| exists       | exists | exists |                         | tracked file                     | :heavy_check_mark: added to snapshots branch       |
+| exists       | exists | exists | exists                  | tracked file                     | :heavy_check_mark: updated to working tree version |
 
 That covers new files.  But what about modified files?
 
