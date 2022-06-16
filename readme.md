@@ -15,9 +15,9 @@ stashes.
 This will create a commit with most local changes on a branch named
 `snapshots-<username>-<hostname>`.<sup>[1](#user-content-footnote-1)</sup>  Take a look at
 the [`snapshots-meribold-smial`][3] branch of this repository to see some commits created
-using git-snap.
+using `git snap`.
 
-git-snap is save.  It doesn't touch the working tree (working directory) and saves and
+`git snap` is save.  It doesn't touch the working tree (working directory) and saves and
 restores the index.
 
 ## What exactly is included in a snapshot commit
@@ -57,7 +57,7 @@ That covers new files.  But what about modified files?
 
 ## Installation
 
-Save git-snap to some directory in your `$PATH`.
+Save `git-snap` to some directory in your `$PATH`.
 
 ## Footnotes
 
