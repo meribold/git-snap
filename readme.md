@@ -4,8 +4,9 @@
 most local changes.  It doesn't ask for a commit message.  It also doesn't touch the
 working tree (working directory), saves and restores the index, and switches back to the
 branch that was checked out before running `git snap`.  In other words, everything looks
-exactly the same after running `git snap`, but your changes are safely stored by Git and
-can be pushed to a remote for redundancy or sharing.  This is in contrast to stashes.
+exactly the same as before after running `git snap`, but your changes are safely stored by
+Git and can be pushed to a remote for redundancy or sharing.  This is in contrast to
+stashes.
 
 Sometimes I want to have some work that isn't yet ready for a proper commit available on
 another machine.  Other times I want to push unfinished work to a remote, so data loss is
