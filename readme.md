@@ -10,7 +10,7 @@ contrast to stashes.
 
     git snap
 
-This will create a commit with most local changes on a branch named
+This creates a commit with most local changes on a branch named
 `snapshots-<username>-<hostname>`.<sup>[1](#user-content-footnote-1)</sup>  Take a look at
 the [`snapshots-meribold-smial`][3] branch of this repository to see some commits created
 using `git snap`.
