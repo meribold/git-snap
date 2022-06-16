@@ -23,7 +23,8 @@ files are included depends on whether the file exists in the working tree, the i
 
 *   If the file doesn't exist in the working tree then it doesn't go into the snapshot
     commit.
-*   If the file exists but isn't staged then it **doesn't** go into the snapshot commit.
+*   If the file exists but isn't staged then it also **doesn't** go into the snapshot
+    commit.
 *   If the file exists in both the working tree and the index then it **does** go into the
     snapshot commit.
 
