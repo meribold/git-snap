@@ -35,7 +35,7 @@ trap cleanup EXIT
 
 # TODO: make sure `@` exists.  Else you get `fatal: Not a valid object name @` and things
 # go poorly.
-git ls-tree -r --full-tree --name-only @ | xargs git reset --
+git ls-tree -r --full-tree --name-only @ | xargs --no-run-if-empty git reset --
 
 # This will also commit new files that are already staged.  I think that's good.
 git commit --no-verify -am 'Snapshot
