@@ -27,24 +27,24 @@ files are included depends on whether the file exists in the working tree, the i
 *   If the file exists in both the working tree and the index then it **does** go into the
     snapshot commit.
 
-| working tree | index  | `HEAD` | tip of snapshots branch | included in snapshot commit                                      |
-|--------------|--------|--------|-------------------------|------------------------------------------------------------------|
-|              |        |        |                         | :x:                                                              |
-|              |        |        | exists                  | :x: (removed from snapshots branch)                              |
-|              |        | exists |                         | :x:                                                              |
-|              |        | exists | exists                  | :x: (removed from snapshots branch)                              |
-|              | exists |        |                         | :x:                                                              |
-|              | exists |        | exists                  | :x: (removed from snapshots branch)                              |
-|              | exists | exists |                         | :x:                                                              |
-|              | exists | exists | exists                  | :x: (removed from snapshots branch)                              |
-| exists       |        |        |                         | :x:                                                              |
-| exists       |        |        | exists                  | :x: (removed from snapshots branch)                              |
-| exists       |        | exists |                         | :x:                                                              |
-| exists       |        | exists | exists                  | :x: (removed from snapshots branch)                              |
-| exists       | exists |        |                         | :heavy_check_mark: (new file; staged; added to snapshots branch) |
-| exists       | exists |        | exists                  | :heavy_check_mark: (already there)                               |
-| exists       | exists | exists |                         | :heavy_check_mark: (added to snapshots branch)                   |
-| exists       | exists | exists | exists                  | :heavy_check_mark: (already there)                               |
+| description      | working tree | index  | `HEAD` | tip of snapshots branch | included in snapshot commit                    |
+|------------------|--------------|--------|--------|-------------------------|------------------------------------------------|
+|                  |              |        |        |                         | :x:                                            |
+|                  |              |        |        | exists                  | :x: (removed from snapshots branch)            |
+|                  |              |        | exists |                         | :x:                                            |
+|                  |              |        | exists | exists                  | :x: (removed from snapshots branch)            |
+|                  |              | exists |        |                         | :x:                                            |
+|                  |              | exists |        | exists                  | :x: (removed from snapshots branch)            |
+|                  |              | exists | exists |                         | :x:                                            |
+|                  |              | exists | exists | exists                  | :x: (removed from snapshots branch)            |
+|                  | exists       |        |        |                         | :x:                                            |
+|                  | exists       |        |        | exists                  | :x: (removed from snapshots branch)            |
+|                  | exists       |        | exists |                         | :x:                                            |
+|                  | exists       |        | exists | exists                  | :x: (removed from snapshots branch)            |
+| new file, staged | exists       | exists |        |                         | :heavy_check_mark: (added to snapshots branch) |
+| new file, staged | exists       | exists |        | exists                  | :heavy_check_mark: (already there)             |
+|                  | exists       | exists | exists |                         | :heavy_check_mark: (added to snapshots branch) |
+|                  | exists       | exists | exists | exists                  | :heavy_check_mark: (already there)             |
 
 That covers new files.  But what about modified files?
 
