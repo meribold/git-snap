@@ -23,20 +23,23 @@ sco "refs/heads/$snapshot_branch" || exit
 cleanup() {
    sco "$HEAD" &&
    # Restore the index.
-   git reset &&
+   git reset -q &&
    if [[ -s $index ]]; then
       # The patch exists and is not empty.  Apply it to the index "with the --cached
       # option".  See git-apply(1).
-      git apply --cached "$index"
+      git apply -q --cached "$index"
    fi
    rm "$index"
 }
 trap cleanup EXIT
 
-git ls-tree -r --full-tree --name-only @ | xargs --no-run-if-empty git reset --
+# Unstage tracked files (untracked files that have been staged remain staged).  Using `--`
+# after `git reset` prevents ambiguity (e.g. when a file doesn't exist in the working
+# tree).
+git ls-tree -r --full-tree --name-only @ | xargs --no-run-if-empty git reset -q --
 
 # This will also commit new files that are already staged.  I think that's good.
-git commit --no-verify -am 'Snapshot
+git commit -q --no-verify -am 'Snapshot
 
 This is a snapshot commit created by git-snap.
 
