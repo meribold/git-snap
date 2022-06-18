@@ -10,8 +10,9 @@ pushed to a remote for redundancy or sharing.  This is in contrast to stashes.
     git snap
 
 This creates a commit with most local changes on a branch named
-`snapshots-<username>-<hostname>`.  Take a look at the [`snapshots-meribold-smial`][1]
-branch of this repository to see some commits created using `git snap`.
+`snapshots-<username>-<hostname>`.  There are no options or parameters.  Take a look at
+the [`snapshots-meribold-smial`][1] branch of this repository to see some commits created
+using `git snap`.
 
 ## Installation
 
