@@ -31,7 +31,8 @@ files are included depends on whether the file exists in the working tree and th
 *   If the file exists in both the working tree and the index, it goes into the snapshot
     commit.
 *   If the file doesn't exist in the working tree, it doesn't go into the snapshot commit.
-*   If the file exists but isn't staged, it **also doesn't** go into the snapshot commit.
+*   If the file is neither tracked nor staged, it doesn't go into the snapshot commit.
+*   If the file is staged for deletion, it doesn't go into the snapshot commit.
 
 Each row in the following table specifies whether a file exists in any of four trees: the
 working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last column
