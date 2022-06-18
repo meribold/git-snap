@@ -46,8 +46,8 @@ version that is included is always the one from the working tree.
 | exists       |        | exists |                         | after `git rm --cached`           |                    |                                 |
 | exists       |        | exists | exists                  | after `git rm --cached`           | :heavy_minus_sign: | removed from snapshots branch   |
 | exists       | exists |        |                         | new file, staged                  | :heavy_plus_sign:  | added to snapshots branch       |
-| exists       | exists |        | exists                  | new file, staged                  | :heavy_plus_sign:  | updated to working tree version |
+| exists       | exists |        | exists                  | new file, staged                  | :wavy_dash:        | updated to working tree version |
 | exists       | exists | exists |                         | tracked file                      | :heavy_plus_sign:  | added to snapshots branch       |
-| exists       | exists | exists | exists                  | tracked file                      | :heavy_plus_sign:  | updated to working tree version |
+| exists       | exists | exists | exists                  | tracked file                      | :wavy_dash:        | updated to working tree version |
 
 [1]: https://github.com/meribold/git-snap/commits/snapshots-meribold-smial
