@@ -40,7 +40,7 @@ git ls-tree -r --full-tree --name-only @ 2>/dev/null |
    xargs --no-run-if-empty git reset -q --
 
 # This will also commit new files that are already staged.  I think that's good.
-git commit --no-verify -am 'Snapshot
+git commit -uno --no-verify -am 'Snapshot
 
 This is a snapshot commit created by git-snap.
 
