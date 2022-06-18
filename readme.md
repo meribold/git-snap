@@ -42,15 +42,15 @@ version that is included is always the one from the working tree.
 |--------------|--------|--------|-------------------------|-----------------------------------------|--------------------|---------------------------------|
 | exists       | exists | exists | exists                  | tracked file                            | :wavy_dash:        | updated to working tree version |
 | exists       | exists | exists |                         | ''                                      | :heavy_plus_sign:  | added to snapshots branch       |
-| exists       | exists |        | exists                  | untracked file, staged                  | :wavy_dash:        | updated to working tree version |
+| exists       | exists |        | exists                  | untracked but staged file               | :wavy_dash:        | updated to working tree version |
 | exists       | exists |        |                         | ''                                      | :heavy_plus_sign:  | added to snapshots branch       |
 | exists       |        | exists | exists                  | after `git rm --cached`                 | :heavy_minus_sign: | removed from snapshots branch   |
 | exists       |        | exists |                         | ''                                      |                    |                                 |
-| exists       |        |        | exists                  | untracked file, not staged              | :heavy_minus_sign: | removed from snapshots branch   |
+| exists       |        |        | exists                  | untracked and unstaged file             | :heavy_minus_sign: | removed from snapshots branch   |
 | exists       |        |        |                         | ''                                      |                    |                                 |
 |              | exists | exists | exists                  | tracked file, after `rm`                | :heavy_minus_sign: | removed from snapshots branch   |
 |              | exists | exists |                         | ''                                      |                    |                                 |
-|              | exists |        | exists                  | untracked file, staged and then removed | :heavy_minus_sign: | removed from snapshots branch   |
+|              | exists |        | exists                  | untracked file; staged and then removed | :heavy_minus_sign: | removed from snapshots branch   |
 |              | exists |        |                         | ''                                      |                    |                                 |
 |              |        | exists | exists                  | after `git rm`                          | :heavy_minus_sign: | removed from snapshots branch   |
 |              |        | exists |                         | ''                                      |                    |                                 |
