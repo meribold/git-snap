@@ -23,7 +23,7 @@ sco "refs/heads/$snapshot_branch" || exit
 cleanup() {
    sco "$HEAD" &&
    # Restore the index.
-   git reset &&
+   git reset -q &&
    if [[ -s $index ]]; then
       # The patch exists and is not empty.  Apply it to the index "with the --cached
       # option".  See git-apply(1).
@@ -34,7 +34,7 @@ cleanup() {
 trap cleanup EXIT
 
 # This will also commit new files that are already staged.  I think that's good.
-git commit --no-verify -am 'Snapshot
+git -c advice.statusHints=false commit -uno --no-verify -am 'Snapshot
 
 This is a snapshot commit created by git-snap.
 
