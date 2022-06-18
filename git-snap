@@ -27,7 +27,7 @@ cleanup() {
    if [[ -s $index ]]; then
       # The patch exists and is not empty.  Apply it to the index "with the --cached
       # option".  See git-apply(1).
-      git apply -q --cached "$index"
+      git apply --cached "$index"
    fi
    rm "$index"
 }
@@ -40,7 +40,7 @@ git ls-tree -r --full-tree --name-only @ 2>/dev/null |
    xargs --no-run-if-empty git reset -q --
 
 # This will also commit new files that are already staged.  I think that's good.
-git commit -q --no-verify -am 'Snapshot
+git commit --no-verify -am 'Snapshot
 
 This is a snapshot commit created by git-snap.
 
