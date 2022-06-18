@@ -28,7 +28,7 @@ working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last 
 indicates whether `git snap` would include this file in the commit it creates.  The
 version that is included is always the one from the working tree.
 
-| working tree | index  | `HEAD` | tip of snapshots branch | description                       |                    | action                          |
+| working tree | index  | `HEAD` | tip of snapshots branch | description                       |                    | effect                          |
 |--------------|--------|--------|-------------------------|-----------------------------------|--------------------|---------------------------------|
 |              |        |        | exists                  | after `git rm` and committing     | :heavy_minus_sign: | removed from snapshots branch   |
 |              |        | exists |                         | after `git rm`                    |                    |                                 |
