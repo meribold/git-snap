@@ -27,7 +27,7 @@ chmod +x ~/bin/git-snap
 
 The version of a file that gets committed is always the one in your working tree.  Which
 files are included depends on the working tree and the index.  Only files that exist in
-both the working tree and the index go into the snapshot commit.  In particular:
+both go into the snapshot commit.  In particular:
 
 *   If the file doesn't exist in the working tree, it doesn't go into the snapshot commit.
 *   If the file is neither tracked nor staged, it doesn't go into the snapshot commit.
