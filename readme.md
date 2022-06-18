@@ -28,6 +28,10 @@ working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last 
 indicates whether `git snap` would include this file in the commit it creates.  The
 version that is included is always the one from the working tree.
 
+## Installation
+
+Save `git-snap` to some directory in your `$PATH`.
+
 | working tree | index  | `HEAD` | tip of snapshots branch | description                       |                    | effect                          |
 |--------------|--------|--------|-------------------------|-----------------------------------|--------------------|---------------------------------|
 |              |        |        | exists                  | after `git rm` and committing     | :heavy_minus_sign: | removed from snapshots branch   |
@@ -45,9 +49,5 @@ version that is included is always the one from the working tree.
 | exists       | exists |        | exists                  | new file, staged                  | :heavy_plus_sign:  | updated to working tree version |
 | exists       | exists | exists |                         | tracked file                      | :heavy_plus_sign:  | added to snapshots branch       |
 | exists       | exists | exists | exists                  | tracked file                      | :heavy_plus_sign:  | updated to working tree version |
-
-## Installation
-
-Save `git-snap` to some directory in your `$PATH`.
 
 [1]: https://github.com/meribold/git-snap/commits/snapshots-meribold-smial
