@@ -12,16 +12,11 @@ fi
 
 git diff --staged > "$index" || exit
 
-# See [1].
-sco() {
-   git symbolic-ref HEAD "$1"
-}
-
-sco "refs/heads/$snapshot_branch" || exit
+git symbolic-ref HEAD "refs/heads/$snapshot_branch" || exit
 
 # Use a trap to make sure we restore HEAD and the index no matter what.
 cleanup() {
-   sco "$HEAD" &&
+   git symbolic-ref HEAD "$HEAD" &&
    # Restore the index.
    git reset -q &&
    if [[ -s $index ]]; then
@@ -39,7 +34,3 @@ git -c advice.statusHints=false commit -uno --no-verify -am 'Snapshot
 This is a snapshot commit created by git-snap.
 
 https://github.com/meribold/git-snap'
-
-# [1]: https://stackoverflow.com/q/6070179
-#      "Switching branches without touching the working tree?"
-# [2]: https://github.com/qw3rtman/git-fire
