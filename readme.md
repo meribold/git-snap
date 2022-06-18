@@ -41,18 +41,18 @@ version that is included is always the one from the working tree.
 |--------------|--------|--------|-------------------------|-----------------------------------|--------------------|---------------------------------|
 |              |        |        | exists                  | after `git rm` and committing     | :heavy_minus_sign: | removed from snapshots branch   |
 |              |        | exists |                         | after `git rm`                    |                    |                                 |
-|              |        | exists | exists                  | after `git rm`                    | :heavy_minus_sign: | removed from snapshots branch   |
+|              |        | exists | exists                  | ''                                | :heavy_minus_sign: | removed from snapshots branch   |
 |              | exists |        |                         | new file, staged and then removed |                    |                                 |
-|              | exists |        | exists                  | new file, staged and then removed | :heavy_minus_sign: | removed from snapshots branch   |
+|              | exists |        | exists                  | ''                                | :heavy_minus_sign: | removed from snapshots branch   |
 |              | exists | exists |                         | tracked file, after `rm`          |                    |                                 |
-|              | exists | exists | exists                  | tracked file, after `rm`          | :heavy_minus_sign: | removed from snapshots branch   |
+|              | exists | exists | exists                  | ''                                | :heavy_minus_sign: | removed from snapshots branch   |
 | exists       |        |        |                         | new file, not staged              |                    |                                 |
-| exists       |        |        | exists                  | new file, not staged              | :heavy_minus_sign: | removed from snapshots branch   |
+| exists       |        |        | exists                  | ''                                | :heavy_minus_sign: | removed from snapshots branch   |
 | exists       |        | exists |                         | after `git rm --cached`           |                    |                                 |
-| exists       |        | exists | exists                  | after `git rm --cached`           | :heavy_minus_sign: | removed from snapshots branch   |
+| exists       |        | exists | exists                  | ''                                | :heavy_minus_sign: | removed from snapshots branch   |
 | exists       | exists |        |                         | new file, staged                  | :heavy_plus_sign:  | added to snapshots branch       |
-| exists       | exists |        | exists                  | new file, staged                  | :wavy_dash:        | updated to working tree version |
+| exists       | exists |        | exists                  | ''                                | :wavy_dash:        | updated to working tree version |
 | exists       | exists | exists |                         | tracked file                      | :heavy_plus_sign:  | added to snapshots branch       |
-| exists       | exists | exists | exists                  | tracked file                      | :wavy_dash:        | updated to working tree version |
+| exists       | exists | exists | exists                  | ''                                | :wavy_dash:        | updated to working tree version |
 
 [1]: https://github.com/meribold/git-snap/commits/snapshots-meribold-smial
