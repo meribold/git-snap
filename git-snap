@@ -20,8 +20,7 @@ cleanup() {
    # Restore the index.
    git reset -q &&
    if [[ -s $index ]]; then
-      # The patch exists and is not empty.  Apply it to the index "with the --cached
-      # option".  See git-apply(1).
+      # The patch exists and is not empty.  Apply it to the index.
       git apply --cached "$index"
    fi
    rm "$index"
@@ -31,6 +30,6 @@ trap cleanup EXIT
 # This will also commit new files that are already staged.  I think that's good.
 git -c advice.statusHints=false commit -uno --no-verify -am 'Snapshot
 
-This is a snapshot commit created by git-snap.
+This is a snapshot commit created using git-snap.
 
 https://github.com/meribold/git-snap'
