@@ -19,7 +19,7 @@ using `git snap`.
 Save `git-snap` to some directory in your `$PATH` and make it executable.  E.g.:
 
 ```bash
-curl -f https://raw.githubusercontent.com/meribold/git-snap/master/git-snap > ~/bin/git-snap
+curl -f https://raw.githubusercontent.com/meribold/git-snap/v1.0.1/git-snap > ~/bin/git-snap
 chmod +x ~/bin/git-snap
 ```
 
