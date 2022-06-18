@@ -17,8 +17,10 @@ branch of this repository to see some commits created using `git snap`.
 
 Save `git-snap` to some directory in your `$PATH` and make it executable.  E.g.:
 
-    curl -f https://raw.githubusercontent.com/meribold/git-snap/master/git-snap > ~/bin/git-snap
-    chmod +x ~/bin/git-snap
+```bash
+curl -f https://raw.githubusercontent.com/meribold/git-snap/master/git-snap > ~/bin/git-snap
+chmod +x ~/bin/git-snap
+```
 
 ## What gets included in a snapshot commit?
 
