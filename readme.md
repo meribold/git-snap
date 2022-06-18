@@ -13,6 +13,10 @@ This creates a commit with most local changes on a branch named
 `snapshots-<username>-<hostname>`.  Take a look at the [`snapshots-meribold-smial`][1]
 branch of this repository to see some commits created using `git snap`.
 
+## Installation
+
+Save `git-snap` to some directory in your `$PATH`.
+
 ## What gets included in a snapshot commit?
 
 The version of a file that gets committed is always the one in your working tree.  Which
@@ -27,10 +31,6 @@ Each row in the following table specifies whether a file exists in any of four t
 working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last column
 indicates whether `git snap` would include this file in the commit it creates.  The
 version that is included is always the one from the working tree.
-
-## Installation
-
-Save `git-snap` to some directory in your `$PATH`.
 
 | working tree | index  | `HEAD` | tip of snapshots branch | description                       |                    | effect                          |
 |--------------|--------|--------|-------------------------|-----------------------------------|--------------------|---------------------------------|
