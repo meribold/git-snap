@@ -56,4 +56,10 @@ version that is included is always the one from the working tree.
 |              |        | exists |                         | ''                                      |                    |                                 |
 |              |        |        | exists                  | after `git rm` and committing           | :heavy_minus_sign: | removed from snapshots branch   |
 
+## Similar projects
+
+*   [Dura][2] is a background process that automatically creates commits similar to those
+    created by `git snap`.
+
 [1]: https://github.com/meribold/git-snap/commits/snapshots-meribold-smial
+[2]: https://github.com/tkellogg/dura
