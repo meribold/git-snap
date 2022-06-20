@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 snapshot_branch=snapshots-$USER-$HOSTNAME
-HEAD=$(git symbolic-ref HEAD) || exit
+head=$(git symbolic-ref HEAD) || exit
 index=$(mktemp) || exit
 
 # shellcheck disable=SC2015
@@ -12,7 +12,7 @@ git diff --staged > "$index" && git symbolic-ref HEAD "refs/heads/$snapshot_bran
 
 # Use a trap to make sure we restore HEAD and the index no matter what.
 cleanup() {
-   git symbolic-ref HEAD "$HEAD" &&
+   git symbolic-ref HEAD "$head" &&
    # Restore the index.
    git reset -q &&
    if [[ -s $index ]]; then
