@@ -6,7 +6,7 @@ index=$(mktemp) || exit
 
 # shellcheck disable=SC2015
 git diff --staged > "$index" && git symbolic-ref HEAD "refs/heads/$snapshot_branch" || {
-   rm "$index" 2>/dev/null
+   rm -f "$index"
    exit 1
 }
 
