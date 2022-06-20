@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 snapshot_branch=snapshots-$USER-$HOSTNAME
-
 HEAD=$(git symbolic-ref HEAD) || exit
-
 index=$(mktemp) || exit
 
 # shellcheck disable=SC2015
