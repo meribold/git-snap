@@ -11,9 +11,8 @@ if ! index=$(mktemp); then
 fi
 
 git diff --staged > "$index" || {
-   gds_status=$?
    rm "$index" 2>/dev/null
-   exit "$gds_status"
+   exit 1
 }
 
 git symbolic-ref HEAD "refs/heads/$snapshot_branch" || exit
