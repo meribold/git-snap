@@ -17,9 +17,10 @@ cleanup() {
    git reset -q &&
    if [[ -s $index ]]; then
       # The patch exists and is not empty.  Apply it to the index.
-      git apply --cached "$index"
+      git apply --cached "$index" && rm "$index"
+   else
+      rm "$index"
    fi
-   rm "$index"
 }
 trap cleanup EXIT
 
