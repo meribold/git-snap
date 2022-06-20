@@ -2,13 +2,9 @@
 
 snapshot_branch=snapshots-$USER-$HOSTNAME
 
-if ! HEAD=$(git symbolic-ref HEAD); then
-   exit
-fi
+HEAD=$(git symbolic-ref HEAD) || exit
 
-if ! index=$(mktemp); then
-   exit
-fi
+index=$(mktemp) || exit
 
 git diff --staged > "$index" || {
    rm "$index" 2>/dev/null
