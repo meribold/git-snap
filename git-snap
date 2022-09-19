@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd "$(git rev-parse --show-cdup)" || exit
+
 snapshot_branch=snapshots-$USER-$HOSTNAME
 head=$(git symbolic-ref HEAD) || exit
 index=$(mktemp) || exit
