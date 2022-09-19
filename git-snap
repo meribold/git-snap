@@ -27,7 +27,7 @@ cleanup() {
 trap cleanup EXIT
 
 # Unstage tracked files (untracked files that have been staged remain staged).  Using `--`
-# after `git reset` prevents ambiguity (e.g. when a file doesn't exist in the working
+# after `git reset` prevents ambiguity (e.g., when a file doesn't exist in the working
 # tree).
 git ls-tree -r --full-tree --name-only @ 2>/dev/null |
    xargs --no-run-if-empty git reset -q --
