@@ -28,13 +28,14 @@ chmod +x ~/bin/git-snap
 The version of a file that gets committed is always the one in your working tree.  Which
 files are included depends on the working tree, the index, and the tip of the snapshots
 branch: files that exist in the working tree and in the index or tip of the snapshots
-branch go into the snapshot commit.  In particular:
+branch go into the snapshot commit.
 
 *   If the file doesn't exist in the working tree, it doesn't go into the snapshot commit.
-    Otherwise,
-*   if the file is staged, it goes into the snapshot commit.  Otherwise,
-*   if the file exists in the tip of the snapshots branch, it goes into the snapshots
-    commit.  Otherwise the file doesn't go into the snapshot commit.
+    Otherwise:
+    *   If the file is staged, it goes into the snapshot commit.
+    *   If the file exists in the tip of the snapshots branch, it goes into the snapshots
+        commit.
+    *   Otherwise the file doesn't go into the snapshot commit.
 
 Each row in the following table specifies whether a file exists in any of four trees: the
 working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last column
