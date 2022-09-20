@@ -30,7 +30,6 @@ files are included depends on the working tree, the index, and the tip of the sn
 branch.  Only files that exist in the working tree and in the index or tip of the
 snapshots branch go into the snapshot commit.  In particular:
 
-*   If the file doesn't exist in the working tree, it doesn't go into the snapshot commit.
 *   If the file exists in the working tree and is staged, it goes into the snapshot
     commit.
 *   If the file exists in the working tree and in the tip of the snapshots branch, it goes
