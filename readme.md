@@ -32,7 +32,7 @@ snapshots branch go into the snapshot commit.  In particular:
 
 *   If the file exists in the working tree and is staged, it goes into the snapshot
     commit.
-*   If the file exists in the working tree and in the tip of the snapshots branch, it goes
+*   If the file exists in the working tree and the tip of the snapshots branch, it goes
     into the snapshots commit.
 *   Otherwise, the file doesn't go into the snapshot commit.
 
