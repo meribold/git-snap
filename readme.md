@@ -36,7 +36,7 @@ snapshots branch go into the snapshot commit:
     into the snapshot commit.
 *   Otherwise, the file doesn't go into the snapshot commit.
 
-Creating a new file doesn't cause `git snap` to start tracking this file unless you add
+Creating a new file doesn't cause `git snap` to start tracking this file unless you added
 the file to the index.  But a file that's in the last snapshot commit will always be
 updated to the working tree version in the next snapshot commit.
 
