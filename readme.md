@@ -36,6 +36,14 @@ snapshots branch go into the snapshot commit.  In particular:
     into the snapshot commit.
 *   Otherwise, the file doesn't go into the snapshot commit.
 
+Creating a new file doesn't cause `git snap` to start tracking this file until you add it
+to the index.  But a file that's in the last snapshot commit will be updated to the
+working tree version in the next snapshot commit.
+
+Just existing in the working tree doesn't cause `git snap` to start tracking a file to the
+snapshots branch.  The file has to 
+Once a file has been added to the snapshots branch
+
 Each row in the following table specifies whether a file exists in any of four trees: the
 working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last column
 indicates whether `git snap` would include this file in the commit it creates.  The
