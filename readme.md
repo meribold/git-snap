@@ -31,11 +31,11 @@ branch.  Only files that exist in the working tree and in the index or tip of th
 snapshots branch go into the snapshot commit.
 
 *   If the file doesn't exist in the working tree, it doesn't go into the snapshot commit.
-    Otherwise:
-    *   If the file is staged, it goes into the snapshot commit.
-    *   If the file exists in the tip of the snapshots branch, it goes into the snapshots
-        commit.
-    *   Otherwise the file doesn't go into the snapshot commit.
+*   If the file exists in the working tree and is staged, it goes into the snapshot
+    commit.
+*   If the file exists in the working tree and in the tip of the snapshots branch, it goes
+    into the snapshots commit.
+*   Otherwise, the file doesn't go into the snapshot commit.
 
 Each row in the following table specifies whether a file exists in any of four trees: the
 working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last column
