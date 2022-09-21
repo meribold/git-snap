@@ -19,19 +19,27 @@ using `git snap`.
 Save `git-snap` to some directory in your `$PATH` and make it executable.  E.g.:
 
 ```bash
-curl -f https://raw.githubusercontent.com/meribold/git-snap/v1.1.3/git-snap > ~/bin/git-snap
+curl -f https://raw.githubusercontent.com/meribold/git-snap/v2.0.0/git-snap > ~/bin/git-snap
 chmod +x ~/bin/git-snap
 ```
 
 ## What gets included in a snapshot commit?
 
 The version of a file that gets committed is always the one in your working tree.  Which
-files are included depends on the working tree and the index: only files that exist in
-both go into the snapshot commit.  In particular:
+files are included depends on the working tree, the index, and the tip of the snapshots
+branch.  Only files that exist in both the working tree and in the index or tip of the
+snapshots branch go into a new snapshot commit:
 
-*   If a file doesn't exist in the working tree, it doesn't go into the snapshot commit.
-*   If a file is neither tracked nor staged, it doesn't go into the snapshot commit.
-*   If a file is staged for deletion, it doesn't go into the snapshot commit.
+*   If the file exists in the working tree and the index, it goes into the snapshot
+    commit.
+*   If the file exists in the working tree and the tip of the snapshots branch, it goes
+    into the snapshot commit.
+*   Otherwise, the file doesn't go into the snapshot commit.
+
+It's more intuitive than it sounds.  Creating a new file doesn't cause `git snap` to start
+tracking this file unless you add the file to the index.  But, a file that's in the last
+snapshot commit will always be updated to the working tree version in the next snapshot
+commit.
 
 Each row in the following table specifies whether a file exists in any of four trees: the
 working tree, the index, `HEAD`, and the tip of the snapshots branch.  The last column
@@ -44,9 +52,9 @@ version that is included is always the one from the working tree.
 | exists       | exists | exists |                         | ''                                      | :heavy_plus_sign:  | added to snapshots branch       |
 | exists       | exists |        | exists                  | untracked but staged file               | :wavy_dash:        | updated to working tree version |
 | exists       | exists |        |                         | ''                                      | :heavy_plus_sign:  | added to snapshots branch       |
-| exists       |        | exists | exists                  | after `git rm --cached`                 | :heavy_minus_sign: | removed from snapshots branch   |
+| exists       |        | exists | exists                  | after `git rm --cached`                 | :wavy_dash:        | updated to working tree version |
 | exists       |        | exists |                         | ''                                      |                    |                                 |
-| exists       |        |        | exists                  | untracked and unstaged file             | :heavy_minus_sign: | removed from snapshots branch   |
+| exists       |        |        | exists                  | untracked and unstaged file             | :wavy_dash:        | updated to working tree version |
 | exists       |        |        |                         | ''                                      |                    |                                 |
 |              | exists | exists | exists                  | tracked file, after `rm`                | :heavy_minus_sign: | removed from snapshots branch   |
 |              | exists | exists |                         | ''                                      |                    |                                 |
