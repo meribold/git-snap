@@ -9,7 +9,7 @@ head=$(git symbolic-ref --quiet HEAD || git rev-parse HEAD) || exit
 index=$(mktemp) || exit
 
 # shellcheck disable=SC2015
-git diff --staged --binary > "$index" &&
+git diff --staged --binary --no-textconv > "$index" &&
 git symbolic-ref HEAD "refs/heads/$snapshot_branch" || {
    rm -f "$index"
    exit 1
