@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 
-cd "$(git rev-parse --show-cdup)" || exit
+# Exit if more than one argument is passed
+if (( $# > 1 )); then
+   echo "Usage: $0 [snapshot-branch-name]" >&2
+   # https://www.gnu.org/software/bash/manual/bash.html#Exit-Status
+   # https://docs.python.org/3/library/sys.html#sys.exit
+   exit 2
+fi
 
-snapshot_branch=snapshots-$USER-$HOSTNAME
-head=$(git symbolic-ref HEAD) || exit
+# FIXME: Wrong exit code when used outside of a Git repo?  It's worse.  I think we don't
+# even exit at all.
+path_up=$(git rev-parse --show-cdup) && cd "$path_up" || exit
+
+snapshot_branch=${1:-snapshots-$USER-$HOSTNAME}
+# TODO: rename?
+# TODO: test what happens when there are no commits
+head=$(git symbolic-ref --quiet HEAD || git rev-parse HEAD) || exit
 index=$(mktemp) || exit
 
 # shellcheck disable=SC2015
@@ -14,7 +26,8 @@ git diff --staged > "$index" && git symbolic-ref HEAD "refs/heads/$snapshot_bran
 
 # Use a trap to make sure we restore HEAD and the index no matter what.
 cleanup() {
-   git symbolic-ref HEAD "$head" &&
+   git checkout --detach &&
+   { git symbolic-ref HEAD "$head" || git update-ref HEAD "$head"; } &&
    # Restore the index.
    git reset -q &&
    if [[ -s $index ]]; then
