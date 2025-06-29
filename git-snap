@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
 
-# Exit if more than one argument is passed
-if (( $# > 1 )); then
-   echo "Usage: $0 [snapshot-branch-name]" >&2
-   # https://www.gnu.org/software/bash/manual/bash.html#Exit-Status
-   # https://docs.python.org/3/library/sys.html#sys.exit
-   exit 2
-fi
-
 path_up=$(git rev-parse --show-cdup) && cd "$path_up" || exit
 
-snapshot_branch=${1:-snapshots-$USER-$HOSTNAME}
+snapshot_branch=snapshots-$USER-$HOSTNAME
 # TODO: rename?
 # TODO: test what happens when there are no commits
 head=$(git symbolic-ref --quiet HEAD || git rev-parse HEAD) || exit
