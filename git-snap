@@ -8,8 +8,6 @@ if (( $# > 1 )); then
    exit 2
 fi
 
-# FIXME: Wrong exit code when used outside of a Git repo?  It's worse.  I think we don't
-# even exit at all.
 path_up=$(git rev-parse --show-cdup) && cd "$path_up" || exit
 
 snapshot_branch=${1:-snapshots-$USER-$HOSTNAME}
