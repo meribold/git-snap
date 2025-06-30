@@ -7,7 +7,7 @@ pushed to a remote for redundancy or sharing.
 
 I know about `git stash`.  This tool is something else.  I'm also aware I can frequently
 create throwaway commits and clean up the history later.  That's fair.  But often I want
-to save my unfinished changes without causing `git diff` to not show them anymore.
+to save my work-in-progress changes without causing `git diff` to not show them anymore.
 
 ## Usage
 
