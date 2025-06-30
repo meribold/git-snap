@@ -5,9 +5,10 @@ was checked out before running `git snap`.  In other words, everything looks the
 before after running `git snap`, but your changes are safely stored by Git and can be
 pushed to a remote for redundancy or sharing.
 
-I know about `git stash`.  This tool is something else.  I'm also aware I can frequently
-create throwaway commits and clean up the history later.  That's fair.  But often I want
-to save my work-in-progress changes without causing `git diff` to not show them anymore.
+I know about `git stash`.  This tool is something else.  I'm also aware that I can
+frequently create throwaway commits and clean up the history later.  That's fair.  But
+often I want to save my work-in-progress changes without causing `git diff` to stop
+showing them.
 
 ## Usage
 
