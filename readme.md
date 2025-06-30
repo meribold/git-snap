@@ -1,9 +1,13 @@
-`git snap` creates a commit that includes most local changes on a user- and
+Running `git snap` creates a commit that includes most local changes on a user- and
 machine-specific snapshots branch.  It doesn't ask for a commit message.  It also doesn't
 touch the working tree, saves and restores the index, and switches back to the branch that
 was checked out before running `git snap`.  In other words, everything looks the same as
 before after running `git snap`, but your changes are safely stored by Git and can be
-pushed to a remote for redundancy or sharing.  This is in contrast to stashes.
+pushed to a remote for redundancy or sharing.
+
+I know about `git stash`.  This tool is something else.  I'm also aware I can frequently
+create throwaway commits and clean up the history later.  That's fair.  But often I want
+to save my unfinished changes without causing `git diff` to not show them anymore.
 
 ## Usage
 
@@ -19,8 +23,8 @@ using `git snap`.
 Save `git-snap` to some directory in your `$PATH` and make it executable.  E.g.:
 
 ```bash
-curl -f https://raw.githubusercontent.com/meribold/git-snap/v2.0.0/git-snap > ~/bin/git-snap
-chmod +x ~/bin/git-snap
+curl -Of https://raw.githubusercontent.com/meribold/git-snap/v2.0.1/git-snap
+chmod +x git-snap
 ```
 
 ## What gets included in a snapshot commit?
