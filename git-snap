@@ -3,7 +3,6 @@
 path_up=$(git rev-parse --show-cdup) && cd "$path_up" || exit
 
 snapshot_branch=snapshots-$USER-$HOSTNAME
-# TODO: test what happens when there are no commits
 head=$(git symbolic-ref --quiet HEAD) || detached_head=$(git rev-parse HEAD) || exit
 index=$(mktemp) || exit
 
