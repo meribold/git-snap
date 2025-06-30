@@ -17,7 +17,7 @@ git symbolic-ref HEAD "refs/heads/$snapshot_branch" || {
 
 # Use a trap to make sure we restore HEAD and the index no matter what.
 cleanup() {
-   { git symbolic-ref --quiet HEAD "$head" || git update-ref --no-deref HEAD "$head"; } &&
+   { git symbolic-ref HEAD "$head" || git update-ref --no-deref HEAD "$head"; } &&
    # Restore the index.
    git reset -q &&
    if [[ -s $index ]]; then
