@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 path_up=$(git rev-parse --show-cdup) && cd "$path_up" || exit
-
-snapshot_branch=snapshots-$USER-$HOSTNAME
 head=$(git symbolic-ref --quiet HEAD) || detached_head=$(git rev-parse HEAD) || exit
 index=$(mktemp) || exit
+
+snapshot_branch=snapshots-$USER-$HOSTNAME
 
 # shellcheck disable=SC2015
 git diff --staged --binary --no-textconv > "$index" &&
