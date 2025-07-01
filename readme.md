@@ -23,10 +23,8 @@ using `git snap`.
 
 Save `git-snap` to some directory in your `$PATH` and make it executable.  E.g.:
 
-```bash
-curl -Of https://raw.githubusercontent.com/meribold/git-snap/v2.0.1/git-snap
-chmod +x git-snap
-```
+    curl -Of https://raw.githubusercontent.com/meribold/git-snap/v2.1.0/git-snap
+    chmod +x git-snap
 
 ## What gets included in a snapshot commit?
 
@@ -35,11 +33,10 @@ files are included depends on the working tree, the index, and the tip of the sn
 branch.  Only files that exist in both the working tree and in the index or tip of the
 snapshots branch go into a new snapshot commit:
 
-*   If the file exists in the working tree and the index, it goes into the snapshot
-    commit.
-*   If the file exists in the working tree and the tip of the snapshots branch, it goes
-    into the snapshot commit.
-*   Otherwise, the file doesn't go into the snapshot commit.
+* If the file exists in the working tree and the index, it goes into the snapshot commit.
+* If the file exists in the working tree and the tip of the snapshots branch, it goes into
+  the snapshot commit.
+* Otherwise, the file doesn't go into the snapshot commit.
 
 It's more intuitive than it sounds.  Creating a new file doesn't cause `git snap` to start
 tracking this file unless you add the file to the index.  But, a file that's in the last
@@ -71,8 +68,8 @@ version that is included is always the one from the working tree.
 
 ## Similar projects
 
-*   [Dura][2] is a background process that automatically creates commits similar to those
-    created by `git snap`.
+* [Dura][2] is a background process that automatically creates commits similar to those
+  created by `git snap`.
 
 [1]: https://github.com/meribold/git-snap/commits/snapshots-meribold-smial
 [2]: https://github.com/tkellogg/dura
