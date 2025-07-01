@@ -23,7 +23,7 @@ using `git snap`.
 
 Save `git-snap` to some directory in your `$PATH` and make it executable.  E.g.:
 
-    curl -Of https://raw.githubusercontent.com/meribold/git-snap/v2.0.1/git-snap
+    curl -Of https://raw.githubusercontent.com/meribold/git-snap/v2.1.0/git-snap
     chmod +x git-snap
 
 ## What gets included in a snapshot commit?

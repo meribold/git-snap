@@ -5,6 +5,7 @@ head=$(git symbolic-ref --quiet HEAD) || detached_head=$(git rev-parse HEAD) || 
 index=$(mktemp) || exit
 
 snapshot_branch=snapshots-$USER-$HOSTNAME
+git branch "$snapshot_branch" 2>/dev/null
 
 # shellcheck disable=SC2015
 git diff --staged --binary --no-textconv > "$index" &&
