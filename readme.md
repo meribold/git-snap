@@ -5,10 +5,15 @@ was checked out before running `git snap`.  In other words, everything looks the
 before after running `git snap`, but your changes are safely stored by Git and can be
 pushed to a remote for redundancy or sharing.
 
-I know about `git stash`.  This tool is something else.  I'm also aware that I can
-frequently create throwaway commits and clean up the history later.  That's fair.  But
-often I want to save my work-in-progress changes without causing `git diff` to stop
-showing them.
+How is this different from `git stash`?  This tool solves a different problem and doesn't
+have too much in common with `git stash`.  In particular, it doesn't change the working
+tree.  It also makes it easier to push the recorded changes to a remote.
+
+Why not just create throwaway commits with something like `git commit -am Throwaway`?
+That is indeed pretty similar to what `git snap` does.  The main difference is that `git
+snap` creates its commits on a different branch than the one that's checked out.  I find
+this useful because `git diff` and my editor (or IDE) continue to show the
+work-in-progress changes.
 
 ## Usage
 
