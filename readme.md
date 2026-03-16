@@ -12,7 +12,7 @@ tree.  It also makes it easier to push the recorded changes to a remote.
 Why not just create throwaway commits with something like `git commit -am Throwaway`?
 That is indeed pretty similar to what `git snap` does.  The main difference is that `git
 snap` creates its commits on a different branch than the one that's checked out.  I find
-this useful because `git diff` and my editor (or IDE) continue to show the
+this useful because `git diff` and my editor (or IDE) continue to show/highlight the
 work-in-progress changes.
 
 ## Usage
